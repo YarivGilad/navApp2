@@ -1,0 +1,81 @@
+import React from 'react';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {COLORS, ROUTES} from '../constants/index';
+import {Notifications, Wallet} from '../screens/index';
+import BottomTabNavigator from './BottomTabs.navigator';
+import Icon from 'react-native-vector-icons/Ionicons';
+import CustomDrawer from '../components/CustomDrawer';
+import SettingsNavigator from './Settings.navigator';
+
+const Drawer = createDrawerNavigator();
+
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator
+      drawerContent={props => <CustomDrawer {...props} />}
+      screenOptions={{
+        headerShown: true,
+        drawerActiveBackgroundColor: COLORS.secondaryLight,
+        drawerActiveTintColor: COLORS.white,
+        drawerLabelStyle: {
+          marginLeft: -20,
+        },
+      }}>
+      {/* <Drawer.Screen name={ROUTES.HOME_DRAWER} component={BottomTabNavigator} />
+      <Drawer.Screen name={ROUTES.WALLET_DRAWER} component={Wallet} />
+      <Drawer.Screen
+        name={ROUTES.NOTIFICATIONS_DRAWER}
+        component={Notifications}
+      /> */}
+
+      <Drawer.Screen
+        name={ROUTES.HOME_DRAWER}
+        component={BottomTabNavigator}
+        options={{
+          title: 'Home',
+          //drawerIcon: ({focused, color, size}) => (
+          drawerIcon: ({color}) => (
+            <Icon name="home-sharp" size={18} color={color} />
+          ),
+        }}
+      />
+
+      <Drawer.Screen
+        name={ROUTES.WALLET_DRAWER}
+        component={Wallet}
+        options={{
+          title: 'Wallet',
+          //drawerIcon: ({focused, color, size}) => (
+          drawerIcon: ({color}) => (
+            <Icon name="wallet" size={18} color={color} />
+          ),
+        }}
+      />
+
+      <Drawer.Screen
+        name={ROUTES.NOTIFICATIONS_DRAWER}
+        component={Notifications}
+        options={{
+          title: 'Notifications',
+          //drawerIcon: ({focused, color, size}) => (
+          drawerIcon: ({color}) => (
+            <Icon name="notifications" size={18} color={color} />
+          ),
+        }}
+      />
+
+      <Drawer.Screen
+        name={ROUTES.SETTINGS_NAVIGATOR}
+        component={SettingsNavigator}
+        options={{
+          title: 'Settings',
+          //drawerIcon: ({focused, color, size}) => (
+          drawerIcon: ({color}) => (
+            <Icon name="settings" size={18} color={color} />
+          ),
+        }}
+      />
+    </Drawer.Navigator>
+  );
+}
+export default DrawerNavigator;

@@ -1,0 +1,34 @@
+h2{
+    gradientForm: #A376F1;
+    primary: #5939e8;
+    
+
+    primary:#D91480;
+    primaryLight:#f0329b;
+    primaryDark:#a41061;
+    secondary:#1A90D9;
+    secondaryLight:#56bbfa;
+    secondaryDark:#0475bb;
+    tertiary: #3ff432;
+    tertiaryLight: #a0ff99;
+    tertiaryDark: #2aa821;
+    info:#2cda55;
+    warn:#f2aa2e;
+    error:#e92f1e;
+    white:#ffe7f4;
+    greyLight:#414041;
+    greyDark:#282526;
+    black:#230314;
+}
+
+gradientForm: '#A376F1',
+  primary: '#7d5fff',
+  secondary: '#7d5fff',
+  white: '#FFFFFF',
+  dark: '#444',
+  bgColor: '#82ccdd',
+  warning: '#f0d500',
+  danger: '#FF0D0E',
+  gray: '#666666',
+  grayLight: '#ccc',
+  black: '#0a0a0a',
